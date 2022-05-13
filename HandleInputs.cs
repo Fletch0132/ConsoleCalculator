@@ -12,6 +12,7 @@ namespace Calculator
         {
             // Calculation classes
             SimpleCalculation simpleCalc = new SimpleCalculation();
+            ComplexCalculation complexCalc = new ComplexCalculation();
 
             try
             {
@@ -23,10 +24,11 @@ namespace Calculator
                     "\n2) Subtraction" +
                     "\n3) Multiplication" +
                     "\n4) Division" +
+                    "\n5) Pythagoras" +
                     "\n0) EXIT");
 
                 // TODO: Look at better way to maintain as "4" will increase with extra functionality
-                while (selection > 4 || selection == -1)
+                while (selection > 5 || selection == -1)
                 {
                     selection = Convert.ToInt32(Console.ReadLine());
 
@@ -47,6 +49,9 @@ namespace Calculator
                             break;
                         case 4:
                             simpleCalc.Division();
+                            break;
+                        case 5:
+                            complexCalc.Pythagoras();
                             break;
                     }
                 }
