@@ -15,19 +15,23 @@ namespace Calculator
 
             try
             {
-                    // More to be added
-                    Console.WriteLine("Please enter the number for the Calculation to perform?" +
-                        "\n1) Addition" +
-                        "\n2) Subtraction" +
-                        "\n3) Multiplication" +
-                        "\n4) Division" +
-                        "\n0) EXIT");
+                int selection = -1;
+
+                // More to be added
+                Console.WriteLine("Please enter the number for the Calculation to perform?" +
+                    "\n1) Addition" +
+                    "\n2) Subtraction" +
+                    "\n3) Multiplication" +
+                    "\n4) Division" +
+                    "\n0) EXIT");
 
                 // TODO: Look at better way to maintain as "4" will increase with extra functionality
-                while (Convert.ToInt32(Console.ReadLine()) > 4)
+                while (selection > 4 || selection == -1)
                 {
+                    selection = Convert.ToInt32(Console.ReadLine());
+
                     // Option validation - Switch case most simple and allows for easy extension
-                    switch (Convert.ToInt32(Console.ReadLine()))
+                    switch (selection)
                     {
                         case 0:
                             Environment.Exit(0);
@@ -58,7 +62,8 @@ namespace Calculator
             }
         }
 
-        public List<Double> SimpleInputPrompt(List<Double> numbers)
+        #region Simple Calc input - Multi Nums
+        public List<Double> SimpleInputPromptMulti(List<Double> numbers)
         {
             // Variables
             string inputNums;
@@ -102,5 +107,8 @@ namespace Calculator
 
             return numbers;
         }
+        #endregion
+
+
     }
 }
